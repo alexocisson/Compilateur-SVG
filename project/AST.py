@@ -108,10 +108,21 @@ class FigureNode(Node):
     def __init__(self, figure, children):
         Node.__init__(self,children)
         self.figure = figure
-        type = self.figure
-        
+    
+    def __repr__(self):
+        return self.figure
 
+class RGBNode(Node):
+    type = 'Couleur rgb'
+    def __init__(self, children):
+        Node.__init__(self,children)
 
+class ColorNode(Node):
+    def __init__(self, color):
+        Node.__init__(self)
+        self.color = color 
+    def __repr__(self):
+        return self.color
 
 class OpNode(Node):
     def __init__(self, op, children):

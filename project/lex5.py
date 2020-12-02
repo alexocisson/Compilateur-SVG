@@ -10,13 +10,18 @@ tokens = (
 	'ADD_OP',
 	'MUL_OP',
 	'IDENTIFIER',
-	'FIGURE'
+	'FIGURE',
+	'COULEUR',
 ) + tuple(map(lambda s:s.upper(),reserved_words))
 
-literals = '();={},'
+literals = '();={},[]'
 
 def t_FIGURE(t):
-	r'Cercle'
+	r'Cercle|Rectangle'
+	return t
+
+def t_COULEUR(t):
+	r'Rouge|Noir'
 	return t
 
 def t_ADD_OP(t):

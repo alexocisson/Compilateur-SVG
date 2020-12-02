@@ -23,6 +23,18 @@ def p_figure(p):
     ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ')' '''
     p[0] = AST.FigureNode(p[1], [p[3], p[5], p[7], p[9]])
 
+def p_figure_couleur(p):
+    ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ',' couleur ')' '''
+    p[0] = AST.FigureNode(p[1], [p[3], p[5], p[7], p[9], p[11]])
+
+def p_couleur(p):
+    ''' couleur : COULEUR 
+        | '[' parametre ',' parametre ',' parametre ']' '''
+    if len(p)==2:
+        p[0] = AST.ColorNode(p[1])
+    else:
+        p[0] = AST.RGBNode([p[2], p[4], p[6]])
+
 def p_parametre(p):
     ''' parametre : NUMBER
         | IDENTIFIER'''
