@@ -1,8 +1,10 @@
 a=0;
+b=[9,9,9];
+c=Rouge;
+d=Pinceau(Rouge,[8,7,9],5);
 while (a-10) {
     Cercle(a,4,2,3);
-    Cercle(a,4,2,3,Rouge);
-    Cercle(a,4,2,3,[9,9,9]);
-    Rectangle(0,0,0,0);
+    Rectangle(0,0,0,0,d);
+    Rectangle(0,0,0,0,Pinceau(Rouge,Rouge,5));
     a = a+1
 }

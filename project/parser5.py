@@ -19,12 +19,16 @@ def p_statement(p):
         | figure'''
     p[0] = p[1]
 
+def p_pinceau(p):
+    ''' pinceau : PINCEAU '(' parametreCouleur ',' parametreCouleur ',' parametre ')' '''
+    p[0] = AST.PinceauNode([p[3], p[5], p[7]])
+
 def p_figure(p):
     ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ')' '''
     p[0] = AST.FigureNode(p[1], [p[3], p[5], p[7], p[9]])
 
 def p_figure_couleur(p):
-    ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ',' couleur ')' '''
+    ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ',' parametrePinceau ')' '''
     p[0] = AST.FigureNode(p[1], [p[3], p[5], p[7], p[9], p[11]])
 
 def p_couleur(p):
@@ -39,6 +43,16 @@ def p_parametre(p):
     ''' parametre : NUMBER
         | IDENTIFIER'''
     p[0] = AST.TokenNode(p[1])
+
+def p_parametre_couleur(p):
+    ''' parametreCouleur : parametre
+        | couleur'''
+    p[0] = p[1]
+
+def p_parametre_pinceau(p):
+    ''' parametrePinceau : parametre
+        | pinceau'''
+    p[0] = p[1]
     	
 def p_statement_print(p):
     ''' statement : PRINT expression '''
@@ -67,7 +81,9 @@ def p_minus(p):
     p[0] = AST.OpNode(p[1], [p[2]])
     	
 def p_assign(p):
-    ''' assignation : IDENTIFIER '=' expression '''
+    ''' assignation : IDENTIFIER '=' expression 
+        | IDENTIFIER '=' couleur
+        | IDENTIFIER '=' pinceau'''
     p[0] = AST.AssignNode([AST.TokenNode(p[1]),p[3]])
 
 def p_error(p):

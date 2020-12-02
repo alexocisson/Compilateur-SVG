@@ -6,9 +6,9 @@ _tabversion = '3.10'
 
 _lr_method = 'LALR'
 
-_lr_signature = "leftADD_OPleftMUL_OPrightUMINUSADD_OP COULEUR FIGURE IDENTIFIER MUL_OP NUMBER PRINT WHILE programme : statement  programme : statement ';' programme  statement : assignation\n        | structure \n        | figure figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ')'  figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ',' couleur ')'  couleur : COULEUR \n        | '[' parametre ',' parametre ',' parametre ']'  parametre : NUMBER\n        | IDENTIFIER statement : PRINT expression  structure : WHILE expression '{' programme '}' expression : expression ADD_OP expression\n            | expression MUL_OP expressionexpression : NUMBER\n        | IDENTIFIER expression : '(' expression ')'  expression : ADD_OP expression %prec UMINUS assignation : IDENTIFIER '=' expression "
+_lr_signature = "leftADD_OPleftMUL_OPrightUMINUSADD_OP COULEUR FIGURE IDENTIFIER MUL_OP NUMBER PINCEAU PRINT WHILE programme : statement  programme : statement ';' programme  statement : assignation\n        | structure \n        | figure pinceau : PINCEAU '(' parametreCouleur ',' parametreCouleur ',' parametre ')'  figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ')'  figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ',' parametrePinceau ')'  couleur : COULEUR \n        | '[' parametre ',' parametre ',' parametre ']'  parametre : NUMBER\n        | IDENTIFIER parametreCouleur : parametre\n        | couleur parametrePinceau : parametre\n        | pinceau statement : PRINT expression  structure : WHILE expression '{' programme '}' expression : expression ADD_OP expression\n            | expression MUL_OP expressionexpression : NUMBER\n        | IDENTIFIER expression : '(' expression ')'  expression : ADD_OP expression %prec UMINUS assignation : IDENTIFIER '=' expression \n        | IDENTIFIER '=' couleur\n        | IDENTIFIER '=' pinceau"
     
-_lr_action_items = {'PRINT':([0,10,25,],[6,6,6,]),'IDENTIFIER':([0,6,8,10,12,15,16,18,20,21,25,33,36,38,44,47,49,],[7,14,14,7,14,14,14,28,14,14,7,28,28,28,28,28,28,]),'WHILE':([0,10,25,],[8,8,8,]),'FIGURE':([0,10,25,],[9,9,9,]),'$end':([1,2,3,4,5,11,13,14,19,22,24,29,30,31,34,41,45,],[0,-1,-3,-4,-5,-12,-16,-17,-2,-19,-20,-14,-15,-18,-13,-6,-7,]),'}':([2,3,4,5,11,13,14,19,22,24,29,30,31,32,34,41,45,],[-1,-3,-4,-5,-12,-16,-17,-2,-19,-20,-14,-15,-18,34,-13,-6,-7,]),';':([2,3,4,5,11,13,14,22,24,29,30,31,34,41,45,],[10,-3,-4,-5,-12,-16,-17,-19,-20,-14,-15,-18,-13,-6,-7,]),'NUMBER':([6,8,12,15,16,18,20,21,33,36,38,44,47,49,],[13,13,13,13,13,27,13,13,27,27,27,27,27,27,]),'(':([6,8,9,12,15,16,20,21,],[15,15,18,15,15,15,15,15,]),'ADD_OP':([6,8,11,12,13,14,15,16,17,20,21,22,23,24,29,30,31,],[12,12,20,12,-16,-17,12,12,20,12,12,-19,20,20,-14,-15,-18,]),'=':([7,],[16,]),'MUL_OP':([11,13,14,17,22,23,24,29,30,31,],[21,-16,-17,21,-19,21,21,21,-15,-18,]),'{':([13,14,17,22,29,30,31,],[-16,-17,25,-19,-14,-15,-18,]),')':([13,14,22,23,27,28,29,30,31,39,42,43,51,],[-16,-17,-19,31,-10,-11,-14,-15,-18,41,45,-8,-9,]),',':([26,27,28,35,37,39,46,48,],[33,-10,-11,36,38,40,47,49,]),']':([27,28,50,],[-10,-11,51,]),'COULEUR':([40,],[43,]),'[':([40,],[44,]),}
+_lr_action_items = {'PRINT':([0,10,30,],[6,6,6,]),'IDENTIFIER':([0,6,8,10,12,15,16,18,20,21,28,30,38,40,41,48,49,50,54,55,60,],[7,14,14,7,14,14,14,33,14,14,33,7,33,33,33,33,33,33,33,33,33,]),'WHILE':([0,10,30,],[8,8,8,]),'FIGURE':([0,10,30,],[9,9,9,]),'$end':([1,2,3,4,5,11,13,14,19,22,24,25,26,27,34,35,36,45,56,59,61,65,],[0,-1,-3,-4,-5,-17,-21,-22,-2,-24,-25,-26,-27,-9,-19,-20,-23,-18,-10,-6,-7,-8,]),'}':([2,3,4,5,11,13,14,19,22,24,25,26,27,34,35,36,39,45,56,59,61,65,],[-1,-3,-4,-5,-17,-21,-22,-2,-24,-25,-26,-27,-9,-19,-20,-23,45,-18,-10,-6,-7,-8,]),';':([2,3,4,5,11,13,14,22,24,25,26,27,34,35,36,45,56,59,61,65,],[10,-3,-4,-5,-17,-21,-22,-24,-25,-26,-27,-9,-19,-20,-23,-18,-10,-6,-7,-8,]),'NUMBER':([6,8,12,15,16,18,20,21,28,38,40,41,48,49,50,54,55,60,],[13,13,13,13,13,32,13,13,32,32,32,32,32,32,32,32,32,32,]),'(':([6,8,9,12,15,16,20,21,29,],[15,15,18,15,15,15,15,15,38,]),'ADD_OP':([6,8,11,12,13,14,15,16,17,20,21,22,23,24,34,35,36,],[12,12,20,12,-21,-22,12,12,20,12,12,-24,20,20,-19,-20,-23,]),'=':([7,],[16,]),'MUL_OP':([11,13,14,17,22,23,24,34,35,36,],[21,-21,-22,21,-24,21,21,21,-20,-23,]),'{':([13,14,17,22,34,35,36,],[-21,-22,30,-24,-19,-20,-23,]),')':([13,14,22,23,32,33,34,35,36,57,58,59,62,63,64,],[-21,-22,-24,36,-11,-12,-19,-20,-23,59,61,-6,-15,65,-16,]),'COULEUR':([16,38,48,],[27,27,27,]),'[':([16,38,48,],[28,28,28,]),'PINCEAU':([16,60,],[29,29,]),',':([27,31,32,33,37,42,43,44,46,47,51,52,56,58,],[-9,40,-11,-12,41,48,-13,-14,49,50,54,55,-10,60,]),']':([32,33,53,],[-11,-12,56,]),}
 
 _lr_action = {}
 for _k, _v in _lr_action_items.items():
@@ -17,7 +17,7 @@ for _k, _v in _lr_action_items.items():
       _lr_action[_x][_k] = _y
 del _lr_action_items
 
-_lr_goto_items = {'programme':([0,10,25,],[1,19,32,]),'statement':([0,10,25,],[2,2,2,]),'assignation':([0,10,25,],[3,3,3,]),'structure':([0,10,25,],[4,4,4,]),'figure':([0,10,25,],[5,5,5,]),'expression':([6,8,12,15,16,20,21,],[11,17,22,23,24,29,30,]),'parametre':([18,33,36,38,44,47,49,],[26,35,37,39,46,48,50,]),'couleur':([40,],[42,]),}
+_lr_goto_items = {'programme':([0,10,30,],[1,19,39,]),'statement':([0,10,30,],[2,2,2,]),'assignation':([0,10,30,],[3,3,3,]),'structure':([0,10,30,],[4,4,4,]),'figure':([0,10,30,],[5,5,5,]),'expression':([6,8,12,15,16,20,21,],[11,17,22,23,24,34,35,]),'couleur':([16,38,48,],[25,44,44,]),'pinceau':([16,60,],[26,64,]),'parametre':([18,28,38,40,41,48,49,50,54,55,60,],[31,37,43,46,47,43,52,53,57,58,62,]),'parametreCouleur':([38,48,],[42,51,]),'parametrePinceau':([60,],[63,]),}
 
 _lr_goto = {}
 for _k, _v in _lr_goto_items.items():
@@ -32,19 +32,26 @@ _lr_productions = [
   ('statement -> assignation','statement',1,'p_statement','parser5.py',17),
   ('statement -> structure','statement',1,'p_statement','parser5.py',18),
   ('statement -> figure','statement',1,'p_statement','parser5.py',19),
-  ('figure -> FIGURE ( parametre , parametre , parametre , parametre )','figure',10,'p_figure','parser5.py',23),
-  ('figure -> FIGURE ( parametre , parametre , parametre , parametre , couleur )','figure',12,'p_figure_couleur','parser5.py',27),
-  ('couleur -> COULEUR','couleur',1,'p_couleur','parser5.py',31),
-  ('couleur -> [ parametre , parametre , parametre ]','couleur',7,'p_couleur','parser5.py',32),
-  ('parametre -> NUMBER','parametre',1,'p_parametre','parser5.py',39),
-  ('parametre -> IDENTIFIER','parametre',1,'p_parametre','parser5.py',40),
-  ('statement -> PRINT expression','statement',2,'p_statement_print','parser5.py',44),
-  ('structure -> WHILE expression { programme }','structure',5,'p_structure','parser5.py',48),
-  ('expression -> expression ADD_OP expression','expression',3,'p_expression_op','parser5.py',52),
-  ('expression -> expression MUL_OP expression','expression',3,'p_expression_op','parser5.py',53),
-  ('expression -> NUMBER','expression',1,'p_expression_num_or_var','parser5.py',57),
-  ('expression -> IDENTIFIER','expression',1,'p_expression_num_or_var','parser5.py',58),
-  ('expression -> ( expression )','expression',3,'p_expression_paren','parser5.py',62),
-  ('expression -> ADD_OP expression','expression',2,'p_minus','parser5.py',66),
-  ('assignation -> IDENTIFIER = expression','assignation',3,'p_assign','parser5.py',70),
+  ('pinceau -> PINCEAU ( parametreCouleur , parametreCouleur , parametre )','pinceau',8,'p_pinceau','parser5.py',23),
+  ('figure -> FIGURE ( parametre , parametre , parametre , parametre )','figure',10,'p_figure','parser5.py',27),
+  ('figure -> FIGURE ( parametre , parametre , parametre , parametre , parametrePinceau )','figure',12,'p_figure_couleur','parser5.py',31),
+  ('couleur -> COULEUR','couleur',1,'p_couleur','parser5.py',35),
+  ('couleur -> [ parametre , parametre , parametre ]','couleur',7,'p_couleur','parser5.py',36),
+  ('parametre -> NUMBER','parametre',1,'p_parametre','parser5.py',43),
+  ('parametre -> IDENTIFIER','parametre',1,'p_parametre','parser5.py',44),
+  ('parametreCouleur -> parametre','parametreCouleur',1,'p_parametre_couleur','parser5.py',48),
+  ('parametreCouleur -> couleur','parametreCouleur',1,'p_parametre_couleur','parser5.py',49),
+  ('parametrePinceau -> parametre','parametrePinceau',1,'p_parametre_pinceau','parser5.py',53),
+  ('parametrePinceau -> pinceau','parametrePinceau',1,'p_parametre_pinceau','parser5.py',54),
+  ('statement -> PRINT expression','statement',2,'p_statement_print','parser5.py',58),
+  ('structure -> WHILE expression { programme }','structure',5,'p_structure','parser5.py',62),
+  ('expression -> expression ADD_OP expression','expression',3,'p_expression_op','parser5.py',66),
+  ('expression -> expression MUL_OP expression','expression',3,'p_expression_op','parser5.py',67),
+  ('expression -> NUMBER','expression',1,'p_expression_num_or_var','parser5.py',71),
+  ('expression -> IDENTIFIER','expression',1,'p_expression_num_or_var','parser5.py',72),
+  ('expression -> ( expression )','expression',3,'p_expression_paren','parser5.py',76),
+  ('expression -> ADD_OP expression','expression',2,'p_minus','parser5.py',80),
+  ('assignation -> IDENTIFIER = expression','assignation',3,'p_assign','parser5.py',84),
+  ('assignation -> IDENTIFIER = couleur','assignation',3,'p_assign','parser5.py',85),
+  ('assignation -> IDENTIFIER = pinceau','assignation',3,'p_assign','parser5.py',86),
 ]

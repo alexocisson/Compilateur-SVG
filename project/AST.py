@@ -112,6 +112,11 @@ class FigureNode(Node):
     def __repr__(self):
         return self.figure
 
+class PinceauNode(Node):
+    type = 'pinceau'
+    def __init__(self, children):
+        Node.__init__(self,children)
+
 class RGBNode(Node):
     type = 'Couleur rgb'
     def __init__(self, children):
