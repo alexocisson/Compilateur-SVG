@@ -41,8 +41,11 @@ def p_couleur(p):
 
 def p_parametre(p):
     ''' parametre : NUMBER
-        | IDENTIFIER'''
+        | IDENTIFIER
+        | expression'''
     p[0] = AST.TokenNode(p[1])
+
+
 
 def p_parametre_couleur(p):
     ''' parametreCouleur : parametre

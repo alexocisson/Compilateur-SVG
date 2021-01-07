@@ -5,6 +5,6 @@ d=Pinceau(Rouge,[8,7,9],5);
 while (a-10) {
     Cercle(a,4,2,3);
     Rectangle(0,0,0,0,d);
-    Rectangle(0,0,0,0,Pinceau(Rouge,Rouge,5));
+    Rectangle(0,0,0,0,Pinceau(Rouge,Rouge,a));
     a = a+1
 }
