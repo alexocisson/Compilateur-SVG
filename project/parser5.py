@@ -20,31 +20,31 @@ def p_statement(p):
     p[0] = p[1]
 
 def p_pinceau(p):
-    ''' pinceau : PINCEAU '(' parametreCouleur ',' parametreCouleur ',' parametre ')' '''
+    ''' pinceau : PINCEAU '(' parametreCouleur ',' parametreCouleur ',' expression ')' '''
     p[0] = AST.PinceauNode([p[3], p[5], p[7]])
 
 def p_figure(p):
-    ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ')' '''
+    ''' figure : FIGURE '(' expression ',' expression ',' expression ',' expression ')' '''
     p[0] = AST.FigureNode(p[1], [p[3], p[5], p[7], p[9]])
 
 def p_figure_couleur(p):
-    ''' figure : FIGURE '(' parametre ',' parametre ',' parametre ',' parametre ',' parametrePinceau ')' '''
+    ''' figure : FIGURE '(' expression ',' expression ',' expression ',' expression ',' parametrePinceau ')' '''
     p[0] = AST.FigureNode(p[1], [p[3], p[5], p[7], p[9], p[11]])
 
 def p_couleur(p):
     ''' couleur : COULEUR 
-        | '[' parametre ',' parametre ',' parametre ']' '''
+        | '[' expression ',' expression ',' expression ']' '''
     if len(p)==2:
         p[0] = AST.ColorNode(p[1])
     else:
         p[0] = AST.RGBNode([p[2], p[4], p[6]])
+
 
 def p_parametre(p):
     ''' parametre : NUMBER
         | IDENTIFIER
         | expression'''
     p[0] = AST.TokenNode(p[1])
-
 
 
 def p_parametre_couleur(p):

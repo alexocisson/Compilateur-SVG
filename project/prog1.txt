@@ -1,10 +1,12 @@
 a=0;
-b=[9,9,9];
+e=2;
+b=[9,e,9];
 c=Rouge;
-d=Pinceau(Rouge,[8,7,9],5);
-while (a-10) {
-    Cercle(a,4,2,3);
-    Rectangle(0,0,0,0,d);
-    Rectangle(0,0,0,0,Pinceau(Rouge,Rouge,a));
-    a = a+1
-}
+d=Pinceau(Rouge,[8,7,9],3);
+Cercle(a,e,e,a,d);
+while (a-20) {
+    Rectangle(0,e,e-a,e/10,Pinceau([9,e,9],Rouge,-a));
+    a = a+1;
+    e = e*2
+};
+Cercle(50,50,50,50,d)

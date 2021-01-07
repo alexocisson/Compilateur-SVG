@@ -10,6 +10,7 @@ operations = {
 '/':lambda x,y:x/y,}
 
 stack = []
+formes = []
 vars={}
 
 @addToClass(AST.ProgramNode)
@@ -58,13 +59,13 @@ def execute(self):
 
 @addToClass(AST.ColorNode)
 def execute(self):
-    if self.color == "Rouge":
-        color = obj.Couleur(255, 0, 0)
-    elif self.color == "Noir":
-        color = obj.Couleur(255, 255, 255)
+    if self.color in "Rouge":
+        col = obj.Couleur(255, 0, 0)
+    elif self.color in "Noir":
+        col = obj.Couleur(255, 255, 255)
     else:
-        color = obj.Couleur(0, 0, 0)
-    return color
+        col = obj.Couleur(0, 0, 0)
+    return col
 
 @addToClass(AST.PinceauNode)
 def execute(self):
@@ -85,7 +86,9 @@ def execute(self):
             fig = obj.Rectangle(args[0], args[1], args[2], args[3], args[4])
         else:
             fig = obj.Rectangle(args[0], args[1], args[2], args[3])
-    print(fig)
+    #print(fig)
+    print(fig.getSvg())
+    formes.append(fig.getSvg())
 
 if __name__ == "__main__" :
     from parser5 import parse
@@ -94,3 +97,9 @@ if __name__ == "__main__" :
     ast = parse(prog)
 
     ast.execute()
+
+    with open(sys.argv[1].replace('txt', 'svg'), 'w') as file:
+        file.write('<svg xmlns="http://www.w3.org/2000/svg">\n')
+        for forme in formes:
+            file.write(f'\t{forme}\n')
+        file.write('</svg>')

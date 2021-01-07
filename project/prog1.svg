@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg">
+	<ellipse cx="0.0" cy="2.0" rx="2.0" ry="0.0" fill="rgb(8.0, 7.0, 9.0)" stroke="rgb(255, 0, 0)" stroke-width="3.0" />
+	<rect x="0.0" y="2.0" width="2.0" height="0.2" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 2.0, 9.0)" stroke-width="0.0" />
+	<rect x="0.0" y="4.0" width="3.0" height="0.4" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 4.0, 9.0)" stroke-width="-1.0" />
+	<rect x="0.0" y="8.0" width="6.0" height="0.8" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 8.0, 9.0)" stroke-width="-2.0" />
+	<rect x="0.0" y="16.0" width="13.0" height="1.6" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 16.0, 9.0)" stroke-width="-3.0" />
+	<rect x="0.0" y="32.0" width="28.0" height="3.2" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 32.0, 9.0)" stroke-width="-4.0" />
+	<rect x="0.0" y="64.0" width="59.0" height="6.4" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 64.0, 9.0)" stroke-width="-5.0" />
+	<rect x="0.0" y="128.0" width="122.0" height="12.8" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 128.0, 9.0)" stroke-width="-6.0" />
+	<rect x="0.0" y="256.0" width="249.0" height="25.6" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-7.0" />
+	<rect x="0.0" y="512.0" width="504.0" height="51.2" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-8.0" />
+	<rect x="0.0" y="1024.0" width="1015.0" height="102.4" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-9.0" />
+	<rect x="0.0" y="2048.0" width="2038.0" height="204.8" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-10.0" />
+	<rect x="0.0" y="4096.0" width="4085.0" height="409.6" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-11.0" />
+	<rect x="0.0" y="8192.0" width="8180.0" height="819.2" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-12.0" />
+	<rect x="0.0" y="16384.0" width="16371.0" height="1638.4" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-13.0" />
+	<rect x="0.0" y="32768.0" width="32754.0" height="3276.8" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-14.0" />
+	<rect x="0.0" y="65536.0" width="65521.0" height="6553.6" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-15.0" />
+	<rect x="0.0" y="131072.0" width="131056.0" height="13107.2" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-16.0" />
+	<rect x="0.0" y="262144.0" width="262127.0" height="26214.4" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-17.0" />
+	<rect x="0.0" y="524288.0" width="524270.0" height="52428.8" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-18.0" />
+	<rect x="0.0" y="1048576.0" width="1048557.0" height="104857.6" fill="rgb(255, 0, 0)" stroke="rgb(9.0, 0.0, 9.0)" stroke-width="-19.0" />
+	<ellipse cx="50.0" cy="50.0" rx="50.0" ry="50.0" fill="rgb(8.0, 7.0, 9.0)" stroke="rgb(255, 0, 0)" stroke-width="3.0" />
+</svg>
